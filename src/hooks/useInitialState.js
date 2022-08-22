@@ -18,6 +18,6 @@ const useInitialState = () => {
     });
   };
 
-  return [state, addToCart, removeFromCart];
+  return {state, addToCart, removeFromCart};
 };
 export default useInitialState;
