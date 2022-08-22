@@ -15,7 +15,6 @@ const Checkout = () => {
   const handleSumTotal = () => {
     const reducer = (accumulator, currentValue) => accumulator + currentValue.price;
     const sum = cart.reduce(reducer, 0);
-    console.log(sum);
     return sum;
   };
 
@@ -24,7 +23,7 @@ const Checkout = () => {
       <div className='Checkout-content'>
         <h3>{cart.length > 0 ? 'Lista de Pedidos' : 'Sin pedidos'}</h3>
         {cart.map((item) => (
-          <div className='Checkout-item'>
+          <div className='Checkout-item' key={item.id}>
             <div className='Checkout-element'>
               <h4>{item.title}</h4>
               <span>${item.price}</span>
