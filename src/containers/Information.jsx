@@ -22,8 +22,8 @@ const Information = () => {
       'cp': formData.get('cp'),
       'phone': formData.get('phone'),
     };
-    addToBuyer(buyer);
     navigate('/checkout/payment');
+    addToBuyer(buyer);
   };
   return (
     <div className='Information'>
