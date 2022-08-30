@@ -1,11 +1,13 @@
 import React, { useContext } from 'react';
 import AppContext from '../context/AppContext';
 import { PayPalScriptProvider, PayPalButtons } from '@paypal/react-paypal-js';
+import { useNavigate } from 'react-router-dom';
 
-const PaypalPay = ({ amount, history }) => {
+const PaypalPay = ({ amount }) => {
 
   const { state, addNewOrder } = useContext(AppContext);
   const { cart, buyer } = state;
+  const navigate = useNavigate();
 
   const paypalOptions = {
     'client-id': process.env.PAYPAL_CLIENT_ID,
@@ -26,7 +28,7 @@ const PaypalPay = ({ amount, history }) => {
         payment: data
       }
       addNewOrder(newOrder);
-      history.push('/checkout/success');
+      navigate('/checkout/success');
     }
   };
   return (
