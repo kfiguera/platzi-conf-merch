@@ -28,6 +28,7 @@
   "homepage": "https://github.com/kfiguera/platzi-conf-merch#readme",
   "dependencies": {
     "@paypal/react-paypal-js": "^7.8.1",
+    "@react-google-maps/api": "^2.12.2",
     "dotenv": "^16.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
